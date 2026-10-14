@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praveen ❤️ Gopika</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg,#430020,#e60073,#ff9abf);
+}
+header { padding: 35px 10px; }
+h1 { font-size: 32px; }
+section {
+  margin: 18px auto;
+  padding: 22px 12px;
+  width: 88%;
+  max-width: 650px;
+  border-radius: 20px;
+  background: #ffffff20;
+  box-shadow: 0 4px 18px #33001555;
+}
+button {
+  border: 0;
+  border-radius: 22px;
+  padding: 12px 20px;
+  background: pink;
+  color: #73003a;
+  font-weight: bold;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.letter { line-height: 1.9; white-space: pre-line; }
+#days { font-size: 30px; font-weight: bold; }
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 7s linear forwards;
+  pointer-events: none;
+}
+@keyframes float {
+  to { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>❤️ Praveen & Gopika ❤️</h1>
+<p>Two Hearts, One Love, Forever Together 💕</p>
+<p>என் உயிரே, என் என்னவளே! 🌹</p>
+</header>
+
+<section>
+<h2>💖 Our Love Story</h2>
+<p>நீ என் வாழ்க்கையில் வந்த அழகான தேவதை.</p>
+<p>உன் சிரிப்பில் என் சந்தோஷம், உன் அன்பில் என் உலகம்.</p>
+<p>என்றும் உன்னுடன் இருக்க ஆசைப்படுகிறேன்! ❤️</p>
+</section>
+
+<section>
+<h2>📸 Our Memories</h2>
+<p>Unga photos-ai keezha add pannalam ❤️</p>
+<div class="gallery">
+<img src="photos/photo1.jpg" alt="Our photo 1">
+<img src="photos/photo2.jpg" alt="Our photo 2">
+<img src="photos/photo3.jpg" alt="Our photo 3">
+<img src="photos/photo4.jpg" alt="Our photo 4">
+</div>
+</section>
+
+<section>
+<h2>🎵 Our Love Song</h2>
+<p>Play button-a press pannu ❤️</p>
+<audio controls loop>
+<source src="lovesong.mp3" type="audio/mpeg">
+</audio>
+<p><small>Upload your own MP3 song to the repository.</small></p>
+</section>
+
+<section>
+<h2>💌 என் என்னவளுக்கு</h2>
+<div class="letter">என் அன்பான கோபிகா ❤️
+
+எத்தனை நாட்கள் கடந்தாலும்
+என் காதல் மாறாது.
+
+உன் கையைப் பிடித்து
+வாழ்க்கை முழுவதும் உன்னோடு
+பயணிக்க வேண்டும் என்பதே என் ஆசை.
+
+என்றும் உன் பிரவீன் ❤️
+
+I LOVE YOU GOPIKA! 💋</div>
+</section>
+
+<section>
+<h2>🗓️ Our Love Days</h2>
+<p>உங்கள் காதல் தொடங்கிய தேதியை தேர்வு செய்:</p>
+<input type="date" id="date">
+<br><br>
+<button onclick="countDays()">Calculate ❤️</button>
+<p id="days">❤️</p>
+<p id="message"></p>
+</section>
+
+<footer><p>Made with love by Praveen ❤️ Gopika</p></footer>
+
+<script>
+function countDays() {
+  const val = document.getElementById("date").value;
+  if (!val) {
+    document.getElementById("message").textContent =
+      "Please select your special date ❤️";
+    return;
+  }
+  const p = val.split("-").map(Number);
+  const start = Date.UTC(p[0],p[1]-1,p[2]);
+  const n = new Date();
+  const today = Date.UTC(n.getFullYear(),n.getMonth(),n.getDate());
+  const days = Math.floor((today-start)/86400000);
+
+  if (days < 0) {
+    document.getElementById("days").textContent = "💕";
+    document.getElementById("message").textContent =
+      "Choose a date in the past.";
+    return;
+  }
+  document.getElementById("days").textContent = days+" Days ❤️";
+  document.getElementById("message").textContent =
+    "Beautiful days together and many more to come! 💖";
+}
+
+setInterval(() => {
+  const h = document.createElement("span");
+  h.className = "heart";
+  h.textContent = "❤️";
+  h.style.left = Math.random()*100+"vw";
+  h.style.fontSize = "24px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(),7000);
+},800);
+</script>
+</body>
+  </html>
